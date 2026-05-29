@@ -23,14 +23,14 @@ const SOURCES = ['ICETEX', 'SENA', 'MinTIC', 'MinEducación', 'MinCiencias', 'ID
 const TOTAL = 4;
 
 // ─── Hook de scroll controlado ───────────────────────────────────────────────
-function useControlledScroll(innerRef) {
+function useControlledScroll(innerRef, enabled) {
   const current    = useRef(0);
   const animating  = useRef(false);
   const [index, setIndex] = useState(0);
   const touchY     = useRef(0);
 
   const goTo = useCallback((next) => {
-    if (animating.current) return;
+    if (!enabled || animating.current) return;
     const clamped = Math.max(0, Math.min(TOTAL - 1, next));
     if (clamped === current.current) return;
 
@@ -44,7 +44,7 @@ function useControlledScroll(innerRef) {
       ease: 'power2.inOut',
       onComplete: () => { animating.current = false; },
     });
-  }, [innerRef]);
+  }, [innerRef, enabled]);
 
   const next = useCallback(() => goTo(current.current + 1), [goTo]);
   const prev = useCallback(() => goTo(current.current - 1), [goTo]);
@@ -53,21 +53,22 @@ function useControlledScroll(innerRef) {
   useEffect(() => {
     const onWheel = (e) => {
       e.preventDefault();
-      if (e.deltaY > 0) next(); else prev();
+      if (enabled) { if (e.deltaY > 0) next(); else prev(); }
     };
     window.addEventListener('wheel', onWheel, { passive: false });
     return () => window.removeEventListener('wheel', onWheel);
-  }, [next, prev]);
+  }, [next, prev, enabled]);
 
   // Teclado
   useEffect(() => {
     const onKey = (e) => {
+      if (!enabled) return;
       if (e.key === 'ArrowDown' || e.key === 'PageDown') next();
       if (e.key === 'ArrowUp'   || e.key === 'PageUp')   prev();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [next, prev]);
+  }, [next, prev, enabled]);
 
   // Touch
   useEffect(() => {
@@ -338,7 +339,8 @@ function ImpactSection({ isActive }) {
 // ─── ROOT ─────────────────────────────────────────────────────────────────────
 export default function LandingPage() {
   const innerRef = useRef(null);
-  const { index, goTo, next } = useControlledScroll(innerRef);
+  const [started, setStarted] = useState(false);
+  const { index, goTo, next } = useControlledScroll(innerRef, started);
 
   useEffect(() => {
     document.body.style.background = '#07070a';
@@ -346,13 +348,26 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="landing-root" style={{ overflow: 'hidden' }}>
+    <div
+      className="landing-root"
+      style={{ overflow: 'hidden', cursor: started ? 'default' : 'pointer' }}
+      onClick={() => !started && setStarted(true)}
+    >
+      {/* Pantalla negra inicial */}
+      {!started && (
+        <div className="absolute inset-0 z-50 bg-[#07070a] flex items-center justify-center"
+          style={{ pointerEvents: 'none' }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-white/20"
+            style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+        </div>
+      )}
+
       {/* Pila de secciones — se desplaza por translateY */}
       <div ref={innerRef} style={{ willChange: 'transform' }}>
-        <HeroSection     isActive={index === 0} onNext={next} />
-        <ProblemSection  isActive={index === 1} />
-        <SolutionSection isActive={index === 2} />
-        <ImpactSection   isActive={index === 3} />
+        <HeroSection     isActive={started && index === 0} onNext={next} />
+        <ProblemSection  isActive={started && index === 1} />
+        <SolutionSection isActive={started && index === 2} />
+        <ImpactSection   isActive={started && index === 3} />
       </div>
 
       <NavDots index={index} goTo={goTo} />
