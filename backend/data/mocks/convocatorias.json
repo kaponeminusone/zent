@@ -8,7 +8,7 @@
     "sourceUrl": "https://geniusfest.co/",
     "date": "2025-07-01",
     "closingDate": "2025-08-01",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+    "image": "/genius.img.png",
     "tags": ["hackathon", "tecnologia", "cartagena", "desarrollo", "innovacion", "geniusfest"],
     "scraped": false
   },
