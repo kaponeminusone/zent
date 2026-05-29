@@ -154,7 +154,7 @@ function HeroSection({ isActive, onNext }) {
         </div>
 
         <div className="hero-line w-full max-w-sm h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-6" />
-        <p className="hero-sub text-sm sm:text-base text-white/40 tracking-[0.3em] uppercase mb-14 font-light">
+        <p className="hero-sub text-sm sm:text-base text-white/70 tracking-[0.3em] uppercase mb-14 font-light">
           La plataforma que reúne lo que ya existe
         </p>
 
@@ -203,9 +203,9 @@ function ProblemSection({ isActive }) {
         <p className="prob-eyebrow text-xs uppercase tracking-[0.3em] text-white/30 mb-5">El problema</p>
         <h2 className="font-display font-extrabold leading-[1.05] mb-12"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
-          <span className="prob-line block">Miles de puertas.</span>
+          <span className="prob-line block text-white">Miles de puertas.</span>
           <span className="prob-line block grad-text-warm">Ningún mapa.</span>
-          <span className="prob-line block text-white/50">¿Dónde está la información?</span>
+          <span className="prob-line block grad-text">¿Dónde está la información?</span>
         </h2>
 
         <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-12">
