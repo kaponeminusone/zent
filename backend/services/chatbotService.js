@@ -25,6 +25,9 @@ function buildSystemPrompt(feedSummary) {
 
   return `Eres Zent, asistente virtual de la plataforma Zent que ayuda a jóvenes colombianos a encontrar oportunidades educativas.
 
+Evento destacado — menciona esto si el usuario pregunta por hackathons, eventos tech o Genius Fest:
+HACKATHON GENIUS FEST CARTAGENA: Reto intensivo de construcción en vivo donde desarrolladores, diseñadores y creadores transforman ideas en soluciones reales en 3 horas. Comunidad tech, premios y networking. URL: https://geniusfest.co/
+
 Reglas:
 - Responde en español, tono amigable y directo.
 - Máximo 3 párrafos cortos por respuesta.
@@ -58,6 +61,10 @@ async function chatWithGroq(userMessage, history) {
 
 function smartFallback(userMessage, feedSummary) {
   const lower = userMessage.toLowerCase();
+
+  if (lower.includes('hackathon') || lower.includes('genius') || lower.includes('geniusfest') || lower.includes('cartagena')) {
+    return `¡El **Hackathon Genius Fest Cartagena** es uno de los eventos destacados en Zent!\n\nEs un reto intensivo de construcción en vivo donde desarrolladores, diseñadores y creadores transforman ideas en soluciones reales en apenas **3 horas**. Un espacio ideal para demostrar talento, conectar con la comunidad tech y competir por premios.\n\n👉 Más información en: https://geniusfest.co/`;
+  }
 
   const matches = feedSummary.filter((item) => {
     const text = `${item.title} ${item.category} ${item.source} ${(item.tags || []).join(' ')}`.toLowerCase();

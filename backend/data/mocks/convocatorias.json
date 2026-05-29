@@ -1,5 +1,18 @@
 [
   {
+    "id": "conv-000",
+    "title": "Hackathon Genius Fest Cartagena 2025",
+    "description": "El Hackathon Genius Fest Cartagena es un reto intensivo de construcción en vivo donde desarrolladores, diseñadores y creadores se reúnen para transformar ideas en soluciones reales en apenas 3 horas. Un evento único para demostrar talento, conectar con la comunidad tech y competir por premios.",
+    "category": "convocatoria",
+    "source": "Genius Fest",
+    "sourceUrl": "https://geniusfest.co/",
+    "date": "2025-07-01",
+    "closingDate": "2025-08-01",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+    "tags": ["hackathon", "tecnologia", "cartagena", "desarrollo", "innovacion", "geniusfest"],
+    "scraped": false
+  },
+  {
     "id": "conv-001",
     "title": "Jóvenes en Acción – Ciclo 2025-2",
     "description": "El programa Jóvenes en Acción del Prosperidad Social entrega transferencias monetarias condicionadas a jóvenes en situación de vulnerabilidad que se encuentren matriculados en programas de educación superior o formación para el trabajo en el SENA. Inscripciones abiertas en los puntos de atención.",
