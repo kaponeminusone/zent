@@ -1,0 +1,63 @@
+[
+  {
+    "id": "beca-001",
+    "title": "Beca Excelencia ICETEX 2025",
+    "description": "El ICETEX abre convocatoria para créditos-beca condonables dirigidos a estudiantes de pregrado con promedio superior a 4.0. Cubre hasta el 100% de la matrícula en IES acreditadas. Aplica para programas de ciencias, tecnología, ingeniería y matemáticas (STEM).",
+    "category": "beca",
+    "source": "ICETEX",
+    "sourceUrl": "https://portal.icetex.gov.co/Portal/Home/HomeEstudiante/becas",
+    "date": "2025-08-01",
+    "closingDate": "2025-09-15",
+    "tags": ["icetex", "pregrado", "stem", "colombia", "beca"],
+    "scraped": false
+  },
+  {
+    "id": "beca-002",
+    "title": "Becas Colfuturo – Posgrados en el Exterior 2026",
+    "description": "Colfuturo ofrece créditos-beca para colombianos que deseen realizar maestrías y doctorados en las mejores universidades del mundo. El programa condona hasta el 50% del crédito si el beneficiario regresa a Colombia a ejercer su profesión.",
+    "category": "beca",
+    "source": "Colfuturo",
+    "sourceUrl": "https://www.colfuturo.org/programas/becas",
+    "date": "2025-09-01",
+    "closingDate": "2025-11-30",
+    "tags": ["colfuturo", "posgrado", "exterior", "maestria", "doctorado"],
+    "scraped": false
+  },
+  {
+    "id": "beca-003",
+    "title": "Beca Generación E – Componente Excelencia",
+    "description": "El Ministerio de Educación Nacional ofrece gratuidad total en matrícula para los mejores bachilleres del país en universidades públicas. Dirigido a estudiantes con puntaje Saber 11 en el percentil 95 o superior.",
+    "category": "beca",
+    "source": "Ministerio de Educación Nacional",
+    "sourceUrl": "https://www.mineducacion.gov.co/1759/w3-article-356271.html",
+    "date": "2025-07-15",
+    "closingDate": "2025-08-31",
+    "tags": ["generacion-e", "mineducacion", "pregrado", "gratuidad", "excelencia"],
+    "scraped": false
+  },
+  {
+    "id": "beca-004",
+    "title": "Beca Talento SENA – Tecnólogos Destacados",
+    "description": "El SENA reconoce y financia la continuidad educativa de aprendices con rendimiento sobresaliente. Incluye financiación para programas técnicos profesionales y tecnológicos en instituciones aliadas.",
+    "category": "beca",
+    "source": "SENA",
+    "sourceUrl": "https://www.sena.edu.co/es-co/Comunicaciones/Paginas/Becas.aspx",
+    "date": "2025-10-01",
+    "closingDate": "2025-11-15",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+    "tags": ["sena", "tecnologia", "aprendiz", "beca", "tecnico"],
+    "scraped": false
+  },
+  {
+    "id": "beca-005",
+    "title": "Beca Distrital para Artes y Cultura – Bogotá 2025",
+    "description": "El Instituto Distrital de las Artes (IDARTES) financia formación artística y cultural para jóvenes bogotanos entre 14 y 28 años. Cubre programas de música, teatro, danza, artes visuales y creación literaria.",
+    "category": "beca",
+    "source": "IDARTES – Alcaldía de Bogotá",
+    "sourceUrl": "https://www.idartes.gov.co/es/convocatorias",
+    "date": "2025-08-20",
+    "closingDate": "2025-09-30",
+    "tags": ["idartes", "bogota", "artes", "cultura", "jovenes"],
+    "scraped": false
+  }
+]

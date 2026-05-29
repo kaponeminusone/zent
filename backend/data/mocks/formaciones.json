@@ -1,0 +1,62 @@
+[
+  {
+    "id": "form-001",
+    "title": "SENA Virtual – Inglés para el Trabajo",
+    "description": "Curso gratuito de inglés técnico y laboral ofrecido por el SENA en modalidad virtual. Niveles A1 a B2. Certificado oficial al completar. Inscripciones permanentes en el portal Sofia Plus.",
+    "category": "formacion",
+    "source": "SENA Sofia Plus",
+    "sourceUrl": "https://oferta.senasofiaplus.edu.co/sofia-oferta/",
+    "date": "2025-07-01",
+    "closingDate": null,
+    "tags": ["sena", "ingles", "virtual", "gratuito", "certificado"],
+    "scraped": false
+  },
+  {
+    "id": "form-002",
+    "title": "Colombia Aprende – Diplomado en Pedagogía Digital",
+    "description": "El MEN ofrece diplomado virtual en pedagogía digital y uso de TIC en el aula, dirigido a docentes y estudiantes de licenciatura. 120 horas de formación con tutoría personalizada y certificación.",
+    "category": "formacion",
+    "source": "Colombia Aprende – MEN",
+    "sourceUrl": "https://colombiaaprende.edu.co/formacion-docente",
+    "date": "2025-08-15",
+    "closingDate": "2025-09-01",
+    "tags": ["mineducacion", "pedagogia", "docente", "digital", "diplmado"],
+    "scraped": false
+  },
+  {
+    "id": "form-003",
+    "title": "Taller Emprendimiento Juvenil – SENA Regional Bogotá",
+    "description": "Taller presencial de 40 horas para jóvenes entre 18 y 35 años sobre ideación, modelo canvas, finanzas básicas y pitching. Cupos limitados. Sede SENA Regional Bogotá Centro.",
+    "category": "formacion",
+    "source": "SENA Regional Bogotá",
+    "sourceUrl": "https://www.sena.edu.co/es-co/Paginas/default.aspx",
+    "date": "2025-09-10",
+    "closingDate": "2025-09-05",
+    "tags": ["sena", "emprendimiento", "bogota", "presencial", "jovenes"],
+    "scraped": false
+  },
+  {
+    "id": "form-004",
+    "title": "Curso Derechos Humanos y Participación Juvenil – IDPAC",
+    "description": "El Instituto Distrital para la Participación y Acción Comunal ofrece curso virtual gratuito sobre derechos humanos, participación juvenil y mecanismos de protección ciudadana. Dirigido a jóvenes bogotanos.",
+    "category": "formacion",
+    "source": "IDPAC – Bogotá",
+    "sourceUrl": "https://www.idpac.gov.co/es/noticias-y-eventos/eventos",
+    "date": "2025-10-05",
+    "closingDate": "2025-10-01",
+    "tags": ["idpac", "bogota", "derechos-humanos", "participacion", "virtual"],
+    "scraped": false
+  },
+  {
+    "id": "form-005",
+    "title": "Formación Técnica en Desarrollo de Software – MinTIC",
+    "description": "Programa de formación técnica en desarrollo web, móvil y backend financiado por el Ministerio TIC. 6 meses de formación intensiva con enfoque práctico. Convocatoria nacional para mayores de 16 años.",
+    "category": "formacion",
+    "source": "Ministerio TIC",
+    "sourceUrl": "https://www.mintic.gov.co/portal/inicio/",
+    "date": "2025-09-01",
+    "closingDate": "2025-08-25",
+    "tags": ["mintic", "software", "programacion", "tecnico", "gratuito"],
+    "scraped": false
+  }
+]

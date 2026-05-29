@@ -1,0 +1,62 @@
+[
+  {
+    "id": "conv-001",
+    "title": "Jóvenes en Acción – Ciclo 2025-2",
+    "description": "El programa Jóvenes en Acción del Prosperidad Social entrega transferencias monetarias condicionadas a jóvenes en situación de vulnerabilidad que se encuentren matriculados en programas de educación superior o formación para el trabajo en el SENA. Inscripciones abiertas en los puntos de atención.",
+    "category": "convocatoria",
+    "source": "Prosperidad Social",
+    "sourceUrl": "https://prosperidadsocial.gov.co/sgpp/transferencias/jovenes-en-accion/",
+    "date": "2025-07-01",
+    "closingDate": "2025-08-15",
+    "tags": ["jovenes-en-accion", "prosperidad-social", "transferencia", "educacion", "vulnerabilidad"],
+    "scraped": false
+  },
+  {
+    "id": "conv-002",
+    "title": "MinTIC – Convocatoria Talento Digital 2025",
+    "description": "El Ministerio de TIC abre inscripciones para formación gratuita en programación, ciberseguridad, inteligencia artificial y transformación digital. Dirigido a colombianos mayores de 18 años. Modalidad 100% virtual con certificación.",
+    "category": "convocatoria",
+    "source": "Ministerio TIC – Colombia",
+    "sourceUrl": "https://www.mintic.gov.co/portal/vivedigital/612/w3-article-19513.html",
+    "date": "2025-09-01",
+    "closingDate": "2025-10-20",
+    "tags": ["mintic", "tecnologia", "programacion", "ia", "gratuito", "virtual"],
+    "scraped": false
+  },
+  {
+    "id": "conv-003",
+    "title": "Convocatoria Emprender Joven – Fondo Emprender SENA",
+    "description": "El Fondo Emprender del SENA financia proyectos empresariales de jóvenes emprendedores. Se otorgan capital semilla no reembolsable de hasta 180 SMMLV para ideas de negocio viables presentadas por aprendices y recién egresados.",
+    "category": "convocatoria",
+    "source": "SENA – Fondo Emprender",
+    "sourceUrl": "https://www.fondoemprender.com/SitePages/Convocatorias.aspx",
+    "date": "2025-08-01",
+    "closingDate": "2025-09-30",
+    "tags": ["sena", "emprendimiento", "capital-semilla", "jovenes", "negocio"],
+    "scraped": false
+  },
+  {
+    "id": "conv-004",
+    "title": "Convocatoria Investigación Formativa – Colciencias Joven",
+    "description": "MinCiencias lanza convocatoria para semilleros de investigación en universidades colombianas. Apoya proyectos de investigación formativa presentados por estudiantes de pregrado con aval institucional. Financiación de hasta $15 millones COP por proyecto.",
+    "category": "convocatoria",
+    "source": "MinCiencias",
+    "sourceUrl": "https://minciencias.gov.co/convocatorias",
+    "date": "2025-10-01",
+    "closingDate": "2025-11-30",
+    "tags": ["minciencias", "investigacion", "semillero", "pregrado", "ciencia"],
+    "scraped": false
+  },
+  {
+    "id": "conv-005",
+    "title": "Convocatoria Líderes Comunitarios – Alcaldía Mayor Bogotá",
+    "description": "La Secretaría de Integración Social abre convocatoria para jóvenes líderes comunitarios de localidades de Bogotá. Incluye formación en liderazgo, gestión pública y participación ciudadana con estímulo económico mensual.",
+    "category": "convocatoria",
+    "source": "Secretaría de Integración Social – Bogotá",
+    "sourceUrl": "https://www.integracionsocial.gov.co/index.php/convocatorias",
+    "date": "2025-07-20",
+    "closingDate": "2025-08-20",
+    "tags": ["bogota", "liderazgo", "comunidad", "jovenes", "participacion"],
+    "scraped": false
+  }
+]

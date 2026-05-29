@@ -1,0 +1,142 @@
+{
+  "name": "Zent Data Pipeline",
+  "version": "1.0.0",
+  "description": "Flujo de datos: fuentes oficiales → normalización → feed → chatbot",
+  "nodes": [
+    {
+      "id": "src_ciudadbolivar",
+      "type": "scraper",
+      "label": "Ciudad Bolívar Gov",
+      "icon": "globe",
+      "status": "active",
+      "config": {
+        "url": "http://www.ciudadbolivar.gov.co/calendario",
+        "method": "GET",
+        "parser": "cheerio",
+        "outputCategories": ["evento"]
+      },
+      "position": { "x": 80, "y": 100 }
+    },
+    {
+      "id": "src_sena",
+      "type": "mock",
+      "label": "SENA",
+      "icon": "book",
+      "status": "mock",
+      "config": {
+        "url": "https://oferta.senasofiaplus.edu.co",
+        "outputCategories": ["formacion"],
+        "note": "Requiere Puppeteer – pendiente implementación real"
+      },
+      "position": { "x": 80, "y": 220 }
+    },
+    {
+      "id": "src_mineducacion",
+      "type": "mock",
+      "label": "MinEducación",
+      "icon": "graduation-cap",
+      "status": "mock",
+      "config": {
+        "url": "https://www.mineducacion.gov.co",
+        "outputCategories": ["beca", "convocatoria"],
+        "note": "Mock por complejidad de parsing JS-heavy"
+      },
+      "position": { "x": 80, "y": 340 }
+    },
+    {
+      "id": "src_icetex",
+      "type": "mock",
+      "label": "ICETEX",
+      "icon": "award",
+      "status": "mock",
+      "config": {
+        "url": "https://portal.icetex.gov.co",
+        "outputCategories": ["beca"],
+        "note": "Mock – requiere autenticación para scraping"
+      },
+      "position": { "x": 80, "y": 460 }
+    },
+    {
+      "id": "src_mintic",
+      "type": "mock",
+      "label": "MinTIC",
+      "icon": "cpu",
+      "status": "mock",
+      "config": {
+        "url": "https://www.mintic.gov.co",
+        "outputCategories": ["formacion", "convocatoria"]
+      },
+      "position": { "x": 80, "y": 580 }
+    },
+    {
+      "id": "normalizer",
+      "type": "transformer",
+      "label": "Normalizer",
+      "icon": "filter",
+      "status": "active",
+      "description": "Unifica schema: { id, title, description, category, source, sourceUrl, date, image, tags, scraped }",
+      "position": { "x": 340, "y": 340 }
+    },
+    {
+      "id": "image_resolver",
+      "type": "transformer",
+      "label": "Image Resolver",
+      "icon": "image",
+      "status": "active",
+      "description": "Asigna imagen pública (Unsplash) según categoría si el item no tiene imagen propia",
+      "position": { "x": 560, "y": 340 }
+    },
+    {
+      "id": "feed_store",
+      "type": "store",
+      "label": "Feed Store",
+      "icon": "database",
+      "status": "active",
+      "description": "Almacenamiento en memoria (MVP). Próximo: PostgreSQL / Redis",
+      "position": { "x": 780, "y": 340 }
+    },
+    {
+      "id": "api_feed",
+      "type": "output",
+      "label": "GET /api/feed",
+      "icon": "server",
+      "status": "active",
+      "description": "Endpoint REST paginado. Filtro por categoría. Consumed por el frontend.",
+      "position": { "x": 1000, "y": 220 }
+    },
+    {
+      "id": "chatbot_gemini",
+      "type": "ai",
+      "label": "Chatbot Gemini",
+      "icon": "message-circle",
+      "status": "active",
+      "config": {
+        "model": "gemini-1.5-flash",
+        "endpoint": "POST /api/chat",
+        "contextSource": "feed_store",
+        "maxContextItems": 30
+      },
+      "position": { "x": 1000, "y": 460 }
+    }
+  ],
+  "edges": [
+    { "from": "src_ciudadbolivar", "to": "normalizer", "label": "scraped events" },
+    { "from": "src_sena",          "to": "normalizer", "label": "mock data" },
+    { "from": "src_mineducacion",  "to": "normalizer", "label": "mock data" },
+    { "from": "src_icetex",        "to": "normalizer", "label": "mock data" },
+    { "from": "src_mintic",        "to": "normalizer", "label": "mock data" },
+    { "from": "normalizer",        "to": "image_resolver", "label": "normalized items" },
+    { "from": "image_resolver",    "to": "feed_store",     "label": "enriched items" },
+    { "from": "feed_store",        "to": "api_feed",       "label": "paginated feed" },
+    { "from": "feed_store",        "to": "chatbot_gemini", "label": "context (30 items)" }
+  ],
+  "triggers": [
+    {
+      "id": "manual_scrape",
+      "type": "manual",
+      "label": "POST /api/scrape/run",
+      "targets": ["src_ciudadbolivar"],
+      "note": "MVP: manual. Próximo: cron cada 6h"
+    }
+  ]
+}
