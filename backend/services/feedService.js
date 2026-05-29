@@ -17,6 +17,10 @@ function getScrapedItems() {
   return scrapedItems;
 }
 
+function isFeaturedItem(item) {
+  return item.id === 'conv-000' || item.source === 'Genius Fest';
+}
+
 // Normaliza cualquier item al schema estándar de Zent
 function normalize(item) {
   return {
@@ -46,8 +50,10 @@ function buildFeed() {
 
   const combined = [...allScraped, ...allMocks];
 
-  // Ordenar: scraped primero (más recientes), luego mocks por fecha desc
+  // Ordenar: Genius Fest destacado primero, luego scraped, luego fecha desc.
   combined.sort((a, b) => {
+    if (isFeaturedItem(a) && !isFeaturedItem(b)) return -1;
+    if (!isFeaturedItem(a) && isFeaturedItem(b)) return 1;
     if (a.scraped && !b.scraped) return -1;
     if (!a.scraped && b.scraped) return 1;
     return new Date(b.date) - new Date(a.date);
