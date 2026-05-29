@@ -146,8 +146,8 @@ function HeroSection({ isActive, onNext }) {
       <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-5xl mx-auto">
         <div className="flex gap-3 sm:gap-6 mb-8 select-none" aria-label="ZENT">
           {'ZENT'.split('').map((ch, i) => (
-            <span key={i} className="hero-letter font-display font-extrabold leading-none grad-text"
-              style={{ fontSize: 'clamp(5rem, 18vw, 11rem)', display: 'inline-block' }}>
+            <span key={i} className="hero-letter font-display font-extrabold leading-none text-white"
+              style={{ fontSize: 'clamp(5rem, 18vw, 11rem)', display: 'inline-block', textShadow: '0 0 80px rgba(255,255,255,0.15)' }}>
               {ch}
             </span>
           ))}
@@ -155,7 +155,7 @@ function HeroSection({ isActive, onNext }) {
 
         <div className="hero-line w-full max-w-sm h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-6" />
         <p className="hero-sub text-sm sm:text-base text-white/40 tracking-[0.3em] uppercase mb-14 font-light">
-          Oportunidades que te encuentran
+          La plataforma que reúne lo que ya existe
         </p>
 
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-1">
@@ -203,9 +203,9 @@ function ProblemSection({ isActive }) {
         <p className="prob-eyebrow text-xs uppercase tracking-[0.3em] text-white/30 mb-5">El problema</p>
         <h2 className="font-display font-extrabold leading-[1.05] mb-12"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
-          <span className="prob-line block">La información</span>
-          <span className="prob-line block grad-text-warm">existe.</span>
-          <span className="prob-line block text-white/50">Los jóvenes, no llegan.</span>
+          <span className="prob-line block">Miles de puertas.</span>
+          <span className="prob-line block grad-text-warm">Ningún mapa.</span>
+          <span className="prob-line block text-white/50">¿Dónde está la información?</span>
         </h2>
 
         <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-12">
@@ -220,7 +220,7 @@ function ProblemSection({ isActive }) {
 
         <blockquote className="prob-quote border-l-2 border-white/10 pl-5 max-w-2xl">
           <p className="text-sm sm:text-base text-white/35 italic leading-relaxed">
-            "Los espacios están en todos los centros… pero cada vez menos jóvenes se presentan. No porque no existan, sino porque no hay acceso a esa información."
+            Becas, formaciones, convocatorias y eventos oficiales llevan años publicándose. El problema no es que no existan — es que nadie los reunió en un solo lugar para los jóvenes.
           </p>
         </blockquote>
       </div>
@@ -262,9 +262,9 @@ function SolutionSection({ isActive }) {
           <p className="sol-eyebrow text-xs uppercase tracking-[0.3em] text-white/30 mb-5">La solución</p>
           <h2 className="font-display font-extrabold leading-[1.05] mb-10"
               style={{ fontSize: 'clamp(2.4rem, 6.5vw, 4.8rem)' }}>
-            <span className="sol-line block">Un scroll.</span>
-            <span className="sol-line block grad-text">Todo lo que</span>
-            <span className="sol-line block">necesitas.</span>
+            <span className="sol-line block">Desliza.</span>
+            <span className="sol-line block grad-text">Descubre.</span>
+            <span className="sol-line block">Aplica.</span>
           </h2>
           <div className="space-y-4">
             {CATEGORIES.map((cat, i) => (
@@ -314,8 +314,8 @@ function ImpactSection({ isActive }) {
       <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-3xl mx-auto">
         <h2 className="font-display font-extrabold leading-[1.0] mb-12"
             style={{ fontSize: 'clamp(3.5rem, 12vw, 7.5rem)' }}>
-          <span className="imp-line block">El cambio</span>
-          <span className="imp-line block grad-text">es un scroll.</span>
+          <span className="imp-line block">Tu oportunidad</span>
+          <span className="imp-line block grad-text">ya existe.</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-12">
